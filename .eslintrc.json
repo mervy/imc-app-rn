@@ -1,0 +1,39 @@
+module.exports = {
+    root: true,
+    env: {
+      es2021: true,
+      node: true,
+      browser: true,
+    },
+    extends: [
+      'eslint:recommended', // Regras básicas recomendadas pelo ESLint
+      'plugin:react/recommended', // Regras do ESLint para React
+      'plugin:prettier/recommended', // Integra ESLint com Prettier
+    ],
+    parserOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      ecmaFeatures: {
+        jsx: true, // Se você está usando JSX (React)
+      },
+    },
+    plugins: ['react'],
+    rules: {
+      'react/prop-types': 'off', // Desativa a regra de prop-types, caso não queira usar
+      'no-console': 'warn', // Exibe um aviso para `console.log`
+      'quotes': ['error', 'single'], // Impõe o uso de aspas simples
+      'indent': ['error', 2], // Indenta com 2 espaços (pode alterar para 4)
+      'semi': ['error', 'always'], // Exige ponto e vírgula no final das instruções
+      'prettier/prettier': [
+        'error',
+        {
+          singleQuote: true, // Uso de aspas simples
+          tabWidth: 4, // Usa 4 espaços para indentação
+          semi: true, // Exige ponto e vírgula
+          trailingComma: 'es5', // Adiciona vírgula no final em objetos e arrays
+          endOfLine: 'auto', // Garante compatibilidade com sistemas de linha de comando
+        },
+      ],
+    },
+  };
+  
